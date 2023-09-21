@@ -3,6 +3,8 @@
 
 import numpy as np
 import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn import svm
 from sklearn.metrics import accuracy_score
@@ -55,3 +57,7 @@ if (prediction[0] == 0):
   print('The person is not diabetic')
 else:
   print('The person is diabetic')
+df = pd.DataFrame(pd.read_csv('/content/diabetes.csv'))
+sns.scatterplot(data=df, x="Glucose", y="BloodPressure")
+plt.title("Scatter Plot of Glucose vs. BloodPressure")
+plt.show()
